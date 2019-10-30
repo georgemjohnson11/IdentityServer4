@@ -20,8 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 .AddIdentity<StocksUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = false;
-                    //TODO: uncomment after some tests
-                    //options.Password.RequiredLength = 12; 
+                    options.Password.RequiredLength = 8; 
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequireNonAlphanumeric = false;

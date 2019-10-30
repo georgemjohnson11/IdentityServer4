@@ -6,10 +6,6 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'CodingMilitia.PlayBall.Auth.Web' ">
-    <StartAction>Project</StartAction>
-    <ApplicationURL>https://localhost:5001;http://localhost:5000</ApplicationURL>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="IdentityServer4" Version="2.3.2" />
     <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.3.0" />
