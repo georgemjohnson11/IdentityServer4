@@ -1,2 +1,2 @@
 # Auth
-Authentication service for the PlayBall application.
+Authentication service for the Stocks application.

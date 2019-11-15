@@ -14,7 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IdentityServerExtensions
     {
-        private const string StockTickersApiScopeName = "StockTickers";
+        private const string StocksApiScopeName = "stocktickers";
 
         public static IServiceCollection AddConfiguredIdentityServer(
             this IServiceCollection services,
@@ -86,7 +86,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static IEnumerable<ApiResource> GetApis()
         {
-            var apiResource = new ApiResource(StockTickersApiScopeName, "StockTickers");
+            var apiResource = new ApiResource(StocksApiScopeName, "stocktickers");
             apiResource.Scopes.First().Required = true;
             return new[]
             {
@@ -106,7 +106,7 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 new Client
                 {
-                    ClientId = "WebFrontend",
+                    ClientId = "Stocks.BackendForFrontend",
                     AllowedGrantTypes = GrantTypes.Code,
                     ClientSecrets = {new Secret(clientConfig.Secret.Sha256())},
                     RedirectUris = clientConfig.RedirectUris,
@@ -115,7 +115,7 @@ namespace Microsoft.Extensions.DependencyInjection
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        StockTickersApiScopeName
+                        StocksApiScopeName
                     },
                     AllowOfflineAccess = true,
                     AccessTokenLifetime = clientConfig.AccessTokenLifetime,
